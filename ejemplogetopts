@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function usage {
+       printf "Usage:\n"
+       printf " -h                               Display this help message.\n"
+       printf " -p <folder path>                 List contents of specified folder.\n"
+       exit 0
+}
+
+function list {
+       ls -l $1
+}
+
+while getopts :p:h opt; do
+    case ${opt} in
+      h)
+         usage
+        ;;
+      p) path=${OPTARG}
+         list $path
+         #echo $folder
+       ;;
+      *)
+          printf "Invalid Option: $1.\n"
+          usage
+       ;;
+     esac
+done
