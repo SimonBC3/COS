@@ -1,0 +1,8 @@
+while getopts 1:0: opt
+do
+	case "{opt}" in 
+		1) enciende=${OPTARG};;
+		0) apaga=${OPTARG}
+	esac
+done
+echo
