@@ -1,1 +1,0 @@
-{ printf "practica\ncos\n1\n1\n1\nyes\n\n\033\0334\n2" } | telnet pdu-acomp.disca.upv.es
