@@ -9,31 +9,32 @@ have_l=false
 
 usage() { echo "Usage: $0 [-1 or -0 ] [ -a ] [ -n x ] [ -f x ] [ -l x ] x is a number between 0 and 8"; }
 
-while getopts "10an:f:l:h" o; do
-    case "${o}" in
-        1)  have_1=true  
-            if [[ have_0 && have_1 ]];then
+check() {
+    if [[ have_0 && have_1 ]];then
                 echo "error, cannot use both -0 && -1"
                 usage
                 exit 0
-            fi
+    fi
+    if [[ have_a && have_n && have_l && have_f ]];then
+                echo "error, cannot use use multiple options -a -n -l -f"
+                usage
+    fi
+}
+
+while getopts "10an:f:l:h" o; do
+    case "${o}" in
+        1)  have_1=true  
+            check
             encendido=1
             echo "${encendido}"
             ;;
         0)  have_0=true
-            if [[ have_0 && have_1 ]];then
-                echo "error, cannot use both -0 && -1"
-                usage
-                exit 0
-            fi
+            check
             encendido=0
             echo "0"
             ;;
         a)  have_a=true
-            if [[ have_a && have_n && have_l && have_f ]];then
-                echo "error, cannot use use multiple options -a -n -l -f"
-                usage
-            fi
+            check
             if [[ $encendido = 1 ]];then
             echo "encendiendo todas"
             ./enciende_todas
@@ -46,10 +47,7 @@ while getopts "10an:f:l:h" o; do
             ;;
         n)  n=${OPTARG}
             have_n=true
-            if [[ have_a && have_n && have_l && have_f ]];then
-                echo "error, cannot use use multiple options -a -n -l -f"
-                usage
-            fi
+            check
             if [[ $encendido = 1 ]];then
                 echo "encendiendo ${n}"
                 ./enciende ${n}
@@ -62,10 +60,7 @@ while getopts "10an:f:l:h" o; do
             ;;
         f)  f=${OPTARG}
             have_f=true
-            if [[ have_a && have_n && have_l && have_f ]];then
-                echo "error, cannot use use multiple options -a -n -l -f"
-                usage
-            fi
+            check
             if [[ $f -gt 8 ]];then
                 usage
                 exit 0
@@ -91,10 +86,7 @@ while getopts "10an:f:l:h" o; do
             ;;
         l)  l=${OPTARG}
             have_l=true
-            if [[ have_a && have_n && have_l && have_f ]];then
-                echo "error, cannot use use multiple options -a -n -l -f"
-                usage
-            fi
+            check
             if [[ $f -lt 0 ]];then
                 usage
                 exit 0
