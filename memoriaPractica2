@@ -1,178 +1,59 @@
-Configuración de la red /sbin/ifconfig
+?Qu? significan las siglas ARP? Address Resolution Protocol
 
-eth0      Link encap:Ethernet  HWaddr 00:15:17:27:C3:39
-          inet addr:158.42.181.219  Bcast:158.42.181.255  Mask:255.255.254.0
-          inet6 addr: fe80::215:17ff:fe27:c339/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:11090473 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:77349 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:100
-          RX bytes:691057062 (659.0 Mb)  TX bytes:23128167 (22.0 Mb)
-          Memory:81b00000-81b20000
-
-eth1      Link encap:Ethernet  HWaddr 00:15:17:27:C3:37
-          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
-          inet6 addr: fe80::215:17ff:fe27:c337/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:39353226 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:43909036 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:100
-          RX bytes:8681769423 (8279.5 Mb)  TX bytes:14537724754 (13864.2 Mb)
-
-lo        Link encap:Local Loopback
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:16436  Metric:1
-          RX packets:3200456 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:3200456 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:2934572059 (2798.6 Mb)  TX bytes:2934572059 (2798.6 Mb)
-
-Tabla de enrutamiento /sbin/route
-
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-192.168.1.0     *               255.255.255.0   U     0      0        0 eth1
-158.42.180.0    *               255.255.254.0   U     0      0        0 eth0
-link-local      *               255.255.0.0     U     0      0        0 eth0
-loopback        *               255.0.0.0       U     0      0        0 lo
-default         rou-labdisca.ne 0.0.0.0         UG    0      0        0 eth0
-
-Tabla ARP /sbin/arp
-
-Address                  HWtype  HWaddress           Flags Mask            Iface
-nas.cac                  ether   00:14:FD:13:01:7E   C                     eth1
-cac8.cac                 ether   00:15:17:27:BF:C8   C                     eth1
-acomp15.disca.upv.es     ether   E8:EA:6A:09:6F:B3   C                     eth0
-cac3.cac                 ether   00:15:17:27:C3:58   C                     eth1
-acomp22.disca.upv.es     ether   E8:EA:6A:09:71:7A   C                     eth0
-cac4.cac                 ether   00:15:17:27:C8:1D   C                     eth1
-acomp05.disca.upv.es     ether   E8:EA:6A:09:77:41   C                     eth0
-cac6.cac                 ether   00:15:17:27:B2:13   C                     eth1
-acomp18.disca.upv.es     ether   E8:EA:6A:09:71:7B   C                     eth0
-cac5.cac                 ether   00:15:17:27:C3:8E   C                     eth1
-acomp21.disca.upv.es     ether   E8:EA:6A:09:74:57   C                     eth0
-cac2.cac                 ether   00:15:17:27:C3:AC   C                     eth1
-acomp17.disca.upv.es     ether   E8:EA:6A:09:71:7D   C                     eth0
-cac7.cac                 ether   00:15:17:27:BF:86   C                     eth1
-acomp10.disca.upv.es     ether   E8:EA:6A:09:6F:FB   C                     eth0
-acomp02.disca.upv.es     ether   E8:EA:6A:09:74:72   C                     eth0
-apc.cac                  ether   00:C0:B7:CF:8F:87   C                     eth1
-rou-labdisca.net2.upv.e  ether   2C:FA:A2:2D:10:95   C                     eth0
-acomp03.disca.upv.es     ether   E8:EA:6A:09:74:09   C                     eth0
-
-
-¿Qué significan las siglas ARP?
-
-host www.upv.es -> obtiene la dirección ip de una url.
-www.upv.es is an alias for ias.cc.upv.es.
-ias.cc.upv.es has address 158.42.4.23
-ias.cc.upv.es mail is handled by 7 mxv.cc.upv.es.
-
-
-
-
+host www.upv.es -> obtiene la direcci?n ip de una url.
 host 158.42.4.23 -> obtiene la url a partir de una ip.
-23.4.42.158.in-addr.arpa domain name pointer ias.cc.upv.es.
-
-
 nslookup 8.8.8.8 -> obtiene nombre de dominio a partir de una ip
-Server:         158.42.248.88
-Address:        158.42.248.88#53
-
-Non-authoritative answer:
-8.8.8.8.in-addr.arpa    name = dns.google.
-
-Authoritative answers can be found from:
-8.8.8.in-addr.arpa      nameserver = ns1.google.com.
-8.8.8.in-addr.arpa      nameserver = ns3.google.com.
-8.8.8.in-addr.arpa      nameserver = ns4.google.com.
-8.8.8.in-addr.arpa      nameserver = ns2.google.com.
-ns2.google.com  internet address = 216.239.34.10
-ns4.google.com  internet address = 216.239.38.10
-ns3.google.com  internet address = 216.239.36.10
-ns1.google.com  internet address = 216.239.32.10
-ns2.google.com  has AAAA address 2001:4860:4802:34::a
-ns4.google.com  has AAAA address 2001:4860:4802:38::a
-ns3.google.com  has AAAA address 2001:4860:4802:36::a
-ns1.google.com  has AAAA address 2001:4860:4802:32::a
+dig ww.upv.es -> consulta informaci?n sobre la direcci?n
 
 
-dig ww.upv.es -> consulta información sobre la dirección
+Hay alguna diferencia al ejecutar psh ps aux y psh ?ps aux??
+Si se ejecuta sin comillas, el comando que se esta realizando es psh ps. Las comillas hacen que se ejecute el comando completo.
 
-; <<>> DiG 9.4.2-P1 <<>> ww.upv.es
-;; global options:  printcmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 12218
-;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+Qu? pasar?a si hacemos como root?
+Se apagar?an todas las maquinas del cac.
 
-;; QUESTION SECTION:
-;ww.upv.es.                     IN      A
+Comparar el comportamiento de pdsh y ssh.
+ssh ejecuta una orden en una maquina espec?fica.
+psh df secuencialmente ejecuta la orden df en todos los nodos.
+ppsh df ejecuta de forma paralela la orden df en todos los nodos pero solo muestra la ultima. ejecuci?n.
+pdsh ejecuta en todos los nodos de forma simultanea y muestra todas las salidas.
 
-;; AUTHORITY SECTION:
-upv.es.                 3600    IN      SOA     mirzam.ccc.upv.es. hostmaster.upv.es. 2022101732 7200 300 1296000 3600
+Codigo psh
 
-;; Query time: 0 msec
-;; SERVER: 158.42.248.88#53(158.42.248.88)
-;; WHEN: Mon Oct 17 15:20:27 2022
-;; MSG SIZE  rcvd: 85
+echo $0 $1
+for i in {1..8}
+do
+        echo cac$i
+        echo "-----------------------"
+        echo $1
+        ssh cac$i $1
+        echo "======================="
+done
 
+C?digo ppsh
 
+echo $0 $1
+for i in {1..8}
+do
+        echo cac$i
+        echo "-----------------------"
+        echo $1
+        ssh cac$i $1 &
+        echo "======================="
+done
 
-dig -x 158.42.4.23
+C?digo pcp
+for i in {1..8}
+do
+        scp $1 cac$i:$2
+        echo "cac$i done"
+done
 
-; <<>> DiG 9.4.2-P1 <<>> -x 158.42.4.23
-;; global options:  printcmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58690
-;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
-
-;; QUESTION SECTION:
-;23.4.42.158.in-addr.arpa.      IN      PTR
-
-;; ANSWER SECTION:
-23.4.42.158.in-addr.arpa. 10800 IN      PTR     ias.cc.upv.es.
-
-;; AUTHORITY SECTION:
-42.158.in-addr.arpa.    10800   IN      NS      sun.rediris.es.
-42.158.in-addr.arpa.    10800   IN      NS      mirzam.cc.upv.es.
-42.158.in-addr.arpa.    10800   IN      NS      vega.cc.upv.es.
-
-;; ADDITIONAL SECTION:
-mirzam.cc.upv.es.       3600    IN      A       158.42.1.5
-vega.cc.upv.es.         3600    IN      A       158.42.4.1
-sun.rediris.es.         23223   IN      A       199.184.182.1
-sun.rediris.es.         5635    IN      AAAA    2620:171:808::1
-
-;; Query time: 0 msec
-;; SERVER: 158.42.248.88#53(158.42.248.88)
-;; WHEN: Mon Oct 17 15:33:16 2022
-;; MSG SIZE  rcvd: 211
-
-cat ifcfg-eth0
-BOOTPROTO='dhcp'
-BROADCAST=''
-ETHTOOL_OPTIONS=''
-IPADDR=''
-MTU=''
-NAME='82566DM-2 Gigabit Network Connection'
-NETMASK=''
-NETWORK=''
-REMOTE_IPADDR=''
-STARTMODE='auto'
-USERCONTROL='no'
-
-cat ifcfg-eth1
-BOOTPROTO='static'
-BROADCAST=''
-ETHTOOL_OPTIONS=''
-IPADDR='192.168.1.1/24'
-MTU=''
-NAME='82541GI Gigabit Ethernet Controller'
-NETMASK=''
-NETWORK=''
-REMOTE_IPADDR=''
-STARTMODE='auto'
-USERCONTROL='no'
-PREFIXLEN=''
-
+C?digo pgsh.
+for (( i=$1; i<=$2; i++ ))
+do
+        echo cac$i
+        echo "-----------------------"
+        ssh cac$i $3
+        echo "======================="
+done
