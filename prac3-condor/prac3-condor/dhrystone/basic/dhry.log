@@ -1,0 +1,30 @@
+000 (9679.000.000) 11/21 15:44:49 Job submitted from host: <192.168.1.1:55361>
+...
+001 (9679.000.000) 11/21 15:45:46 Job executing on host: <192.168.1.102:32853>
+...
+005 (9679.000.000) 11/21 15:45:53 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:02, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:02, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1763  -  Run Bytes Sent By Job
+	17691  -  Run Bytes Received By Job
+	1763  -  Total Bytes Sent By Job
+	17691  -  Total Bytes Received By Job
+...
+000 (9761.000.000) 11/24 15:31:58 Job submitted from host: <192.168.1.1:55361>
+...
+001 (9761.000.000) 11/24 15:32:48 Job executing on host: <192.168.1.102:32853>
+...
+005 (9761.000.000) 11/24 15:32:50 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1763  -  Run Bytes Sent By Job
+	17691  -  Run Bytes Received By Job
+	1763  -  Total Bytes Sent By Job
+	17691  -  Total Bytes Received By Job
+...

@@ -1,0 +1,9 @@
+universe = vanilla
+executable = prep
+arguments = $ENV(LI) $ENV(LS) $ENV(ITER) $ENV(JOBS) in
+log = prep.log
+output = prep.out
+error = prep.error
+#should_transfer_files = Yes
+#when_to_transfer_output = ON_EXIT_OR_EVICT
+queue

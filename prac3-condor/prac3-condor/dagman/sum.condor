@@ -1,0 +1,9 @@
+universe =  vanilla
+executable = sum
+arguments = $ENV(JOBS) $ENV(PWD)/out
+log = intsum.log
+output = resultado
+error = intsum.error
+#should_transfer_files = Yes
+#when_to_transfer_output = ON_EXIT_OR_EVICT
+queue
