@@ -1,0 +1,9 @@
+echo $0 $1
+for i in {1..8}
+do
+	echo cac$i
+	echo "-----------------------"
+	echo $1
+	ssh cac$i $1
+	echo "======================="
+done 

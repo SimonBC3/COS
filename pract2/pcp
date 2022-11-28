@@ -1,0 +1,5 @@
+for i in {1..8}
+do
+	scp $1 cac$i:$2 
+	echo "cac$i done"
+done 
