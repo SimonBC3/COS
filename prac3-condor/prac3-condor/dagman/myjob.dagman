@@ -1,0 +1,10 @@
+export LI=0
+export LS=6.26
+export ITER=1000
+export JOBS=50
+
+JOB A prep.condor
+JOB B intsin.condor
+JOB C sum.condor
+PARENT A CHILD B
+PARENT B CHILD C
